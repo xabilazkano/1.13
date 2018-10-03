@@ -10,45 +10,49 @@ public class Sixth {
 		System.out.println("Enter the second number ");
 		int b = sc.nextInt();
 		int d=0;
-		int c=0;
+		int z=0;
 		
 		if (a<b) {
-			 c=b-a+1;
+			
 		for (int i=a;i<=b;i++) {
 			
-			for (int e=2;e<(i/2);e++) {
-				if (i%e==0) {
-					d=1;					
-				}
-			}
-			if (d==1) {
-				c--;
-				d=0;
-				System.out.println(i);
+			if (primeNumber(i)) {
+				d++;
+				
 			}
 		}
 		}
 		
 		else {
-		 c=a-b+1;
+		 
 			for (int i=b;i<=a;i++) {
-				
-				for (int e=2;e<(i/2);e++) {
-					if (i%e==0) {
-						d=1;					
-					}
+				if (primeNumber(i)) {
+					d++;
+					
 				}
-				if (d==1) {
-					c--;
-					d=0;
+			
 				}
+		
 			}
 			
-		}
-		System.out.println("There are "+c+" prime numbers between the two numbers");
+		
+		System.out.println("There are "+d+" prime numbers between the two numbers");
 		
 		
 
+	}
+	
+	public static boolean primeNumber (int z) {
+	boolean result=true;
+		
+		for (int v =2; v<z;v++) {
+			if (z%v==0) {
+				result=false;
+				break;
+			}
+		}
+		return result;
+		
 	}
 	}
 
